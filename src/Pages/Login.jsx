@@ -53,7 +53,7 @@ const Login = () => {
   }, []);
   return (
     <div className="flex justify-center min-h-screen items-center">
-      <div className="border card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
+      <div className="border border-green-600 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
         <h2 className="font-semibold text-2xl text-center">
           Login your account
         </h2>
@@ -87,7 +87,7 @@ const Login = () => {
               </NavLink>
             </div>
 
-            <button type="submit" className="btn btn-neutral mt-4">
+            <button type="submit" className="btn btn-neutral  bg-green-600 border-none mt-4">
               Login
             </button>
             <button
@@ -127,7 +127,7 @@ const Login = () => {
 
             <p className="font-semibold pt-5 text-center">
               Don't Have An Account?{" "}
-              <Link className="text-secondary" to="/auth/register">
+              <Link className="text-green-600" to="/auth/register">
                 Register
               </Link>
             </p>

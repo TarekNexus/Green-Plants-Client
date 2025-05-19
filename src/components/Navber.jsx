@@ -22,7 +22,7 @@ const Navber = () => {
 
   return (
     <nav className="sticky top-0 z-20">
-      <div className="navbar w-11/12 mx-auto border-b border-gray-200 text-black bg-white/20 backdrop-blur-sm">
+      <div className="navbar w-full px-28 mx-auto border-b border-gray-200 text-black bg-white/20 backdrop-blur-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -89,7 +89,7 @@ const Navber = () => {
           
           {loading ? (
             <div className="flex items-center justify-center w-12 h-12">
-              <span className="loading loading-spinner text-primary"></span>
+              <span className="loading loading-spinner text-green-600"></span>
             </div>
           ) : user ? (
             <>
@@ -110,12 +110,21 @@ const Navber = () => {
               </button>
             </>
           ) : (
+            <>
             <Link
               to="/auth/login"
-              className="mt-2 px-6 py-3 btn text-white border-none font-semibold bg-green-600 hover:bg-green-700 rounded-3xl shadow-md transition duration-300"
+              className="mt-2 px-6 py-3 btn text-white border-none font-semibold bg-green-600 hover:bg-green-700 rounded-3xl shadow-md transition duration-300 mr-6"
             >
               Login
             </Link>
+            <Link
+              to="/auth/register"
+              className="mt-2 px-6 py-3 btn text-white border-none font-semibold bg-green-600 hover:bg-green-700 rounded-3xl shadow-md transition duration-300"
+            >
+              Register
+            </Link>
+            </>
+            
           )}
         </div>
       </div>

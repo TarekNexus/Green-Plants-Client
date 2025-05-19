@@ -9,6 +9,7 @@ import AuthLayout from "../Root/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddPlant from "../Pages/AddPlant";
+import Privetroute from "../Provider/PrivetRoute";
 
 
 
@@ -37,11 +38,15 @@ export const router = createBrowserRouter([
       },
        {
         path:"/Add-Plant",
-        element:<AddPlant></AddPlant>
+        element:<Privetroute>
+          <AddPlant></AddPlant>
+        </Privetroute>
       },
        {
         path:"/my-plants",
-        element:<MyPlants></MyPlants>
+        element:<Privetroute>
+          <MyPlants></MyPlants>
+        </Privetroute>
       },
       {
         path:"/auth",
