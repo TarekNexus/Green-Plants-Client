@@ -1,39 +1,32 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+import Lottie from 'lottie-react';
+import plant404Animation from '../assets/Animation - 1747683124986.json'; // Update the path as needed
 
 const Error = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center px-4">
-      <h1 className="text-7xl font-bold text-indigo-500 mb-4">404</h1>
-      <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-        Oops! You're lost in space.
+    <div className="min-h-screen flex flex-col items-center justify-center bg-green-100 text-green-900 text-center px-4">
+      
+      <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] ">
+        <Lottie animationData={plant404Animation} loop={true} />
+      </div>
+
+      
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2">
+        Oops! Page Not Found
       </h2>
-      <p className="mb-6 text-gray-300 max-w-md">
-        The page you're looking for might have been moved, deleted, or never existed.
+      <p className="mb-6 text-green-800 max-w-xs sm:max-w-md">
+        The page you’re looking for doesn’t exist or was moved. Let’s get back to growing!
       </p>
-      <div className="flex gap-4">
-        <button
-          onClick={() => navigate("/")}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
-        >
-          Go Home
-        </button>
-        <button
-          onClick={() => navigate(-1)}
-          className="border border-white text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-gray-900"
-        >
-          Go Back
-        </button>
-      </div>
-      <div className="mt-10 w-64 h-64 relative">
-        <img
-          src="/images/astronaut.png"
-          alt="Lost astronaut"
-          className="w-full h-full object-contain animate-float"
-        />
-      </div>
+
+      <button
+        onClick={() => navigate("/")}
+        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition duration-200"
+      >
+        Back to Home
+      </button>
     </div>
   );
 };
