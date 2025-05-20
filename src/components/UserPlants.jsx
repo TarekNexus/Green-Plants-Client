@@ -1,6 +1,6 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
-import image from '../assets/t-slider-1.jpg'; // Replace with relevant image
+import image from '../assets/be-f.webp'; // Replace with relevant image
 
 const UserPlants = () => {
   return (

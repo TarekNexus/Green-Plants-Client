@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB5VHJMNmB72I6C1LyRGSgKuCk0WxYuHSk",
-  authDomain: "green-plants-53e50.firebaseapp.com",
-  projectId: "green-plants-53e50",
-  storageBucket: "green-plants-53e50.firebasestorage.app",
-  messagingSenderId: "282246505016",
-  appId: "1:282246505016:web:7f70963ebb78f3a0cebccd"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
