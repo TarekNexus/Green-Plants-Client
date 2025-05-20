@@ -7,8 +7,8 @@ const Error = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-green-100 text-green-900 text-center px-4">
-      
+    <div className="min-h-screen flex flex-col items-center justify-center  text-green-900 text-center px-4">
+       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] ">
         <Lottie animationData={plant404Animation} loop={true} />
       </div>
