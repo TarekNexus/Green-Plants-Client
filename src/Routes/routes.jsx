@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddPlant from "../Pages/AddPlant";
 import Privetroute from "../Provider/PrivetRoute";
+import PlantsDetails from "../Pages/PlantsDetails";
 
 
 
@@ -34,7 +35,17 @@ export const router = createBrowserRouter([
       },
       {
         path:"/all-plants",
-        element:<AllPlants></AllPlants>
+        element:<AllPlants></AllPlants>,
+        loader:()=>fetch("http://localhost:3000/plants")
+
+      },
+       {
+        path:"/plants/:id",
+        element:<Privetroute>
+          <PlantsDetails></PlantsDetails>
+        </Privetroute>,
+        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`)
+
       },
        {
         path:"/Add-Plant",
