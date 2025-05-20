@@ -24,8 +24,8 @@ const PlantCareMistakes = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white text-center relative">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-16 px-4  text-center relative">
+      <div className="w-11/12 mx-auto">
         <h4 className="text-green-600 font-semibold uppercase tracking-wider mb-2">
           🌿 Common Issues
         </h4>
