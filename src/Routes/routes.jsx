@@ -36,7 +36,8 @@ export const router = createBrowserRouter([
       {
         path:"/all-plants",
         element:<AllPlants></AllPlants>,
-        loader:()=>fetch("http://localhost:3000/plants")
+        loader:()=>fetch("http://localhost:3000/plants"),
+         hydrateFallbackElement:<Loading></Loading>
 
       },
        {
@@ -44,7 +45,8 @@ export const router = createBrowserRouter([
         element:<Privetroute>
           <PlantsDetails></PlantsDetails>
         </Privetroute>,
-        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`),
+         hydrateFallbackElement:<Loading></Loading>
 
       },
        {

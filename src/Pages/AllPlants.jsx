@@ -8,6 +8,7 @@ const AllPlants = () => {
 
     return (
         <div className="p-6 w-11/12 mx-auto">
+             <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
             {/* Title and Description */}
             <div className="mb-8 text-center">
                 <h1 className="text-3xl font-bold text-green-700">All Plants</h1>
@@ -18,7 +19,7 @@ const AllPlants = () => {
 
             {/* Table */}
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white rounded shadow">
+                <table className="min-w-full border border-green-300 rounded shadow">
                     <thead>
                         <tr className="bg-green-100 text-left">
                             <th className="py-3 px-4 text-center">NO:</th>

@@ -6,6 +6,7 @@ const PlantsDetails = () => {
 
   return (
     <div className="w-11/12 mx-auto p-6">
+         <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       {/* Title and description */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-emerald-700 mb-3">Plant Details</h1>
