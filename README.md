@@ -74,13 +74,13 @@ Users can easily register or log in, add their plants, and stay on top of care r
 - Lottie React (for animations)
 - React Toastify (success/error messages)
 - React Tooltip
-- Date-fns
+
 
 ### 🔧 Backend
 - Node.js
 - Express.js
-- MongoDB (with Mongoose)
-- CORS, dotenv, and JSON Web Tokens (JWT)
+- MongoDB 
+- CORS, dotenv, 
 
 ---
 
