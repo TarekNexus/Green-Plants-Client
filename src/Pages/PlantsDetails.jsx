@@ -16,7 +16,7 @@ const PlantsDetails = () => {
       </div>
 
       {/* Card */}
-      <div className="card flex flex-col lg:flex-row bg-emerald-50 border border-emerald-100 shadow-md rounded-md overflow-hidden">
+      <div className="card flex flex-col lg:flex-row  border border-emerald-100 shadow-md rounded-md overflow-hidden">
         {/* Image */}
         <figure
           className="bg-emerald-100 overflow-hidden rounded-t-md lg:rounded-t-none lg:rounded-l-md flex-shrink-0"

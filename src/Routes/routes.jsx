@@ -11,6 +11,7 @@ import Register from "../Pages/Register";
 import AddPlant from "../Pages/AddPlant";
 import Privetroute from "../Provider/PrivetRoute";
 import PlantsDetails from "../Pages/PlantsDetails";
+import UpdatePlants from "../Pages/UpdatePlants";
 
 
 
@@ -44,6 +45,15 @@ export const router = createBrowserRouter([
         path:"/plants/:id",
         element:<Privetroute>
           <PlantsDetails></PlantsDetails>
+        </Privetroute>,
+        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`),
+         hydrateFallbackElement:<Loading></Loading>
+
+      },
+       {
+        path:"/update/:id",
+        element:<Privetroute>
+          <UpdatePlants></UpdatePlants>
         </Privetroute>,
         loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`),
          hydrateFallbackElement:<Loading></Loading>

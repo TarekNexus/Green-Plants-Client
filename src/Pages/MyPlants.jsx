@@ -1,20 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import NoData from '../components/NoData';
-
+import Loading from '../components/Loading';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const MyPlants = () => {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { user } = useContext(AuthContext);
-
+console.log(plants);
   useEffect(() => {
-    if (!user?.email) return; // Only fetch if user email exists
+    if (!user?.email) return;
 
     fetch(`http://localhost:3000/plants/email/${user.email}`)
       .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch plants');
+        if (!res.ok) throw new Error('Failed to fetch your plants');
         return res.json();
       })
       .then(data => {
@@ -25,24 +27,93 @@ const MyPlants = () => {
         setError(err.message);
         setLoading(false);
       });
-  }, [user?.email]); // Effect runs when email changes
+  }, [user?.email]);
 
-  if (loading) return <p>Loading plants...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (plants.length === 0) return <NoData></NoData>;
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "⚠️ Warning:This  Plant Collection delete !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/plants/${id}`, {
+          method: "DELETE"
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Plant has been deleted.", "success");
+              const remainingPlants = plants.filter(plant => plant._id !== id);
+              setPlants(remainingPlants);
+            }
+          })
+          .catch(() => {
+            Swal.fire("Error", "Something went wrong while deleting.", "error");
+          });
+      }
+    });
+  };
+
+  if (loading) return <Loading />;
+  if (error) return <div className="text-center text-red-600 py-10">Error: {error}</div>;
+  if (plants.length === 0) return <NoData />;
 
   return (
-    <div>
-      <h2>My Plants ({plants.length})</h2>
-      <ul>
-        {plants.map(plant => (
-          <li key={plant._id}>
-            <h3>{plant.plantName}</h3>
-            <p>{plant.description}</p>
-          </li>
-        ))}
-      </ul>
+  <div className='w-full '>
+    <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="relative p-6 w-11/12 max-w-6xl mx-auto">
+     
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-bold text-emerald-800">My Plant Collection</h1>
+        <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+          Track and manage your personal plant collection with ease.
+        </p>
+      </div>
+
+      <div className="overflow-x-auto bg-white border border-emerald-200 rounded-lg shadow-md">
+        <table className="min-w-full divide-y divide-emerald-200 text-sm">
+          <thead className="bg-emerald-100 text-emerald-900">
+            <tr>
+              <th className="py-3 px-4 text-center font-medium">NO</th>
+              <th className="py-3 px-4 text-center font-medium">Plant Name</th>
+              <th className="py-3 px-4 text-center font-medium">Category</th>
+              <th className="py-3 px-4 text-center font-medium">Watering</th>
+              <th className="py-3 px-4 text-center font-medium">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-emerald-100">
+            {plants.map((plant, index) => (
+              <tr key={plant.id} className="hover:bg-emerald-50 transition-colors">
+                <td className="py-3 px-4 text-center">{index + 1}</td>
+                <td className="py-3 px-4 text-center">{plant.plantName}</td>
+                <td className="py-3 px-4 text-center">{plant.category}</td>
+                <td className="py-3 px-4 text-center">{plant.wateringFrequency || 'N/A'}</td>
+                <td className="py-3 px-4 text-center space-x-2">
+                  
+                 <Link to={`/update/${plant._id}`}><button
+                   
+                    className="px-3 py-1 rounded bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+                  >
+                    Update
+                  </button></Link>
+                  <button
+                    onClick={() => handleDelete(plant._id)}
+                    className="px-3 py-1 rounded bg-red-100 text-red-700 hover:bg-red-200 transition"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
   );
 };
 
