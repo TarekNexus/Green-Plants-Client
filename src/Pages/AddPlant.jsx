@@ -13,7 +13,11 @@ const AddPlant = () => {
 
     const form = e.target;
     const formData = new FormData(form);
-    const newPlants = Object.fromEntries(formData.entries());
+
+    const newPlants = {
+      ...Object.fromEntries(formData.entries()),
+      addedDate: new Date().toISOString().split("T")[0], // Automatically adds today's date
+    };
 
     fetch("http://localhost:3000/plants", {
       method: "POST",

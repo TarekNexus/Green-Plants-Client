@@ -25,7 +25,7 @@ const UserPlants = () => {
           <Leaf className="w-5 h-5" /> Why Start With Us
         </p>
         <h2 className="text-4xl font-bold mb-6 leading-tight">
-          Beginner-Friendly <br /> Indoor Plants
+            Easy-Care <br /> Plants for Beginners
         </h2>
         <p className="text-gray-700 mb-6">
           Discover a curated selection of low-maintenance houseplants perfect for beginners. These green companions are easy to care for, thrive in various environments, and bring life into any room — no green thumb required!

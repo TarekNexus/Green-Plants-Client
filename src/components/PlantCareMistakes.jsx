@@ -27,10 +27,10 @@ const PlantCareMistakes = () => {
     <section className="py-16 px-4  text-center relative">
       <div className="w-11/12 mx-auto">
         <h4 className="text-green-600 font-semibold uppercase tracking-wider mb-2">
-          🌿 Common Issues
+          🌿 Informative & Clear
         </h4>
         <h2 className="text-4xl font-bold text-gray-800 mb-12">
-          Top Plant Care Mistakes
+          Common Plant Care Mistakes to Avoid
         </h2>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 relative">

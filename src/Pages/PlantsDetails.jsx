@@ -1,11 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { ScrollRestoration, useLoaderData } from "react-router-dom";
 
 const PlantsDetails = () => {
   const plant = useLoaderData();
 
   return (
     <div className="w-11/12 mx-auto p-6">
+      <ScrollRestoration></ScrollRestoration>
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       {/* Title and description */}
       <div className="text-center mb-10">

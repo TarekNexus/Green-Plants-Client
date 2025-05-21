@@ -32,7 +32,9 @@ export const router = createBrowserRouter([
       {
         path:"/",
         Component:Home,
-        hydrateFallbackElement:<Loading></Loading>
+         loader:()=>fetch("http://localhost:3000/plants/latest"),
+        hydrateFallbackElement:<Loading></Loading>,
+        
       },
       {
         path:"/all-plants",
