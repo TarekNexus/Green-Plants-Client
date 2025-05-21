@@ -1,12 +1,90 @@
-# React + Vite
+# 🌿 Green Plants — Plant Care Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Live Site
+[🔗 Visit Green Plants](https://a10-green-plants.netlify.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Project Overview
 
-## Expanding the ESLint configuration
+**Green Plants** is a full-stack, mobile-responsive web application that empowers users to track and manage the care of their houseplants. Designed for plant enthusiasts, this platform offers features like adding new plants, setting watering schedules, tracking health, and more — all with secure, personalized user dashboards.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Users can easily register or log in, add their plants, and stay on top of care routines with a clean and visually appealing interface inspired by the theme: **Indoor Jungle** 🌱
+
+---
+
+## 🚀 Features
+
+- 🔐 **Secure Authentication**
+  - Email/Password and Google login
+  - Conditional navigation and protected routes
+
+- 🌱 **Plant Management System**
+  - Add, view, update, and delete plants
+  - Track watering frequency, health status, and care level
+
+- 🗂️ **Categorized & Sorted Views**
+  - Filter and sort by care level or next watering date
+  - “My Plants” view shows only the user's added plants
+
+- 🌗 **Dark/Light Theme Toggle**
+  - User-friendly theme switcher for better accessibility
+
+- 📅 **Reminders & Care Logging**
+  - Date inputs for watering and health tracking
+  - Styled success/error messages (No browser alerts)
+
+---
+
+## 🖼️ Pages & Components
+
+- **Home Page**
+  - Slider/Banner with plant care tips
+  - Sections: New Plants, Beginner-Friendly Tips, Common Mistakes
+
+- **Add Plant (Private Route)**
+  - Dropdowns for category & care level
+  - Date pickers and real-time feedback
+
+- **All Plants**
+  - Table view with sorting and details button
+
+- **View Details (Private Route)**
+  - Detailed plant info in card-style layout
+
+- **My Plants (Private Route)**
+  - Update/Delete with confirmation modal
+
+- **Register/Login**
+  - Validations and success/error handling via toast alerts
+
+- **404 Page**
+  - Custom error page with navigation help
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔧 Frontend
+- React + Vite
+- React Router DOM
+- Tailwind CSS
+- DaisyUI
+- Firebase Authentication
+- Lottie React (for animations)
+- React Toastify (success/error messages)
+- React Tooltip
+- Date-fns
+
+### 🔧 Backend
+- Node.js
+- Express.js
+- MongoDB (with Mongoose)
+- CORS, dotenv, and JSON Web Tokens (JWT)
+
+---
+
+## 🔐 Environment Variables
+
+Ensure you add a `.env` file with the following (do not expose in public repo):
+
