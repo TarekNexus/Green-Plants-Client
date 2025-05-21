@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
+
+
 
 const AllPlants = () => {
   const [plantData, setPlantData] = useState([]);
   const [sortBy, setSortBy] = useState('');
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3000/plants')
       .then(res => res.json())
-      .then(data => setPlantData(data));
+      .then(data => {
+        setPlantData(data);
+        setLoading(false);  // <-- set loading false after data received
+      })
+      .catch(() => {
+        setLoading(false);  // <-- also set loading false if fetch fails
+      });
   }, []);
+
+  if (loading) return <Loading />;
 
   const sortPlants = (data) => {
     if (sortBy === 'nextWateringDate') {
@@ -26,7 +38,7 @@ const AllPlants = () => {
   const sortedPlants = sortPlants(plantData);
 
   return (
-    <div className="p-6 w-11/12 mx-auto">
+    <div className="p-6 w-11/12 mx-auto relative">
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       {/* Sort Dropdown */}
@@ -65,15 +77,22 @@ const AllPlants = () => {
           </thead>
           <tbody>
             {sortedPlants.map((plant, index) => (
-              <tr key={plant._id} className="border-b border-green-400 hover:bg-green-50">
+              <tr
+                key={plant._id}
+                className="border-b border-green-400 hover:bg-green-50 cursor-pointer"
+                onClick={() => navigate(`/plants/${plant._id}`)}
+              >
                 <td className="py-3 px-4 text-center">{index + 1}</td>
                 <td className="py-3 px-4 text-center">{plant.plantName}</td>
                 <td className="py-3 px-4 text-center">{plant.category}</td>
                 <td className="py-3 px-4 text-center">{plant.wateringFrequency}</td>
                 <td className="py-3 px-4 text-center">
                   <button
-                    onClick={() => navigate(`/plants/${plant._id}`)}
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent row click
+                      navigate(`/plants/${plant._id}`);
+                    }}
                   >
                     View Details
                   </button>

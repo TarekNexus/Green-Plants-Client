@@ -10,7 +10,7 @@ const MyPlants = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { user } = useContext(AuthContext);
-console.log(plants);
+
   useEffect(() => {
     if (!user?.email) return;
 
@@ -64,7 +64,7 @@ console.log(plants);
 
   return (
   <div className='w-full '>
-    <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       <div className="relative p-6 w-11/12 max-w-6xl mx-auto">
      
       <div className="text-center mb-10">
@@ -87,7 +87,7 @@ console.log(plants);
           </thead>
           <tbody className="divide-y divide-emerald-100">
             {plants.map((plant, index) => (
-              <tr key={plant.id} className="hover:bg-emerald-50 transition-colors">
+              <tr key={plant._id} className="hover:bg-emerald-50 transition-colors">
                 <td className="py-3 px-4 text-center">{index + 1}</td>
                 <td className="py-3 px-4 text-center">{plant.plantName}</td>
                 <td className="py-3 px-4 text-center">{plant.category}</td>

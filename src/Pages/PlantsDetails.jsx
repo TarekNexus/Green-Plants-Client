@@ -6,12 +6,15 @@ const PlantsDetails = () => {
 
   return (
     <div className="w-11/12 mx-auto p-6">
-         <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       {/* Title and description */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-emerald-700 mb-3">Plant Details</h1>
+        <h1 className="text-4xl font-bold text-emerald-700 mb-3">
+          Plant Details
+        </h1>
         <p className="text-gray-700 text-lg max-w-xl mx-auto">
-          Explore the detailed information about this plant including its care routine, category, and more.
+          Explore the detailed information about this plant including its care
+          routine, category, and more.
         </p>
       </div>
 
@@ -30,10 +33,7 @@ const PlantsDetails = () => {
         </figure>
 
         {/* Info Section */}
-        <div
-          className="card-body p-6 lg:p-8"
-          style={{ maxWidth: "100%" }}
-        >
+        <div className="card-body p-6 lg:p-8" style={{ maxWidth: "100%" }}>
           <h2 className="card-title text-3xl text-emerald-800 font-semibold mb-4">
             {plant.plantName}
           </h2>
@@ -41,45 +41,65 @@ const PlantsDetails = () => {
 
           <div className="space-y-4 text-gray-800 text-lg">
             <p>
-              <span className="font-semibold text-emerald-700">Category:</span> {plant.category}
+              <span className="font-semibold text-emerald-700">Category:</span>{" "}
+              {plant.category}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Care Level:</span> {plant.careLevel}
+              <span className="font-semibold text-emerald-700">
+                Care Level:
+              </span>{" "}
+              {plant.careLevel}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Health Status:</span> {plant.healthStatus}
+              <span className="font-semibold text-emerald-700">
+                Health Status:
+              </span>{" "}
+              {plant.healthStatus}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Watering Frequency:</span> {plant.wateringFrequency || "N/A"}
+              <span className="font-semibold text-emerald-700">
+                Watering Frequency:
+              </span>{" "}
+              {plant.wateringFrequency || "N/A"}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Last Watered Date:</span> {plant.lastWateredDate}
+              <span className="font-semibold text-emerald-700">
+                Last Watered Date:
+              </span>{" "}
+              {plant.lastWateredDate}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Next Watering Date:</span> {plant.nextWateringDate}
+              <span className="font-semibold text-emerald-700">
+                Next Watering Date:
+              </span>{" "}
+              {plant.nextWateringDate}
             </p>
 
             <hr className="border-emerald-200" />
 
             <p>
-              <span className="font-semibold text-emerald-700">Added By:</span> {plant.userName}
+              <span className="font-semibold text-emerald-700">Added By:</span>{" "}
+              {plant.userName}
             </p>
             <p>
-              <span className="font-semibold text-emerald-700">Email:</span> {plant.userEmail}
+              <span className="font-semibold text-emerald-700">Email:</span>{" "}
+              {plant.userEmail}
             </p>
           </div>
         </div>
       </div>
 
       {/* Responsive styling with Tailwind custom breakpoints */}
-      <style jsx>{`
-        @media (min-width: 1024px) {
-          figure {
-            width: 700px !important;
-            height: 533px !important;
-          }
-        }
-      `}</style>
+      <style>
+        {`
+  @media (min-width: 1024px) {
+    figure {
+      width: 700px !important;
+      height: 533px !important;
+    }
+  }
+`}
+      </style>
     </div>
   );
 };
