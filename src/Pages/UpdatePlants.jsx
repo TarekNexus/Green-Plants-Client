@@ -54,18 +54,18 @@ const UpdatePlants = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start px-4 pt-16">
-         <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-green-700 mb-2">Update Plant</h2>
-        <p className="text-green-600 text-sm">Edit the details of your plant</p>
+        <h2 className="text-3xl font-bold text-green-600 mb-2">Update Plant</h2>
+        <p className="text-xl">Edit the details of your plant</p>
       </div>
 
       <form
         onSubmit={handleUpdatePlant}
-        className="w-full max-w-5xl bg-white shadow-lg rounded-xl p-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="w-full max-w-5xl  shadow-lg rounded-xl p-8 grid grid-cols-1 md:grid-cols-2 gap-6"
       >
         <div>
-          <label htmlFor="plantName" className="block mb-1 font-medium text-green-800">Plant Name</label>
+          <label htmlFor="plantName" className="block mb-1 font-bold text-green-600">Plant Name</label>
           <input
             id="plantName"
             type="text"
@@ -77,7 +77,7 @@ const UpdatePlants = () => {
         </div>
 
         <div>
-          <label htmlFor="image" className="block mb-1 font-medium text-green-800">Plant Image URL</label>
+          <label htmlFor="image" className="block mb-1 font-bold text-green-600">Plant Image URL</label>
           <input
             id="image"
             type="text"
@@ -88,7 +88,7 @@ const UpdatePlants = () => {
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="description" className="block mb-1 font-medium text-green-800">Description</label>
+          <label htmlFor="description" className="block mb-1 font-bold text-green-600">Description</label>
           <textarea
             id="description"
             name="description"
@@ -99,7 +99,7 @@ const UpdatePlants = () => {
         </div>
 
         <div>
-          <label htmlFor="category" className="block mb-1 font-medium text-green-800">Category</label>
+          <label htmlFor="category" className="block mb-1 font-bold text-green-600">Category</label>
           <select
             id="category"
             name="category"
@@ -107,17 +107,17 @@ const UpdatePlants = () => {
             className="w-full border px-4 py-2 rounded"
             required
           >
-            <option value="">Select category</option>
-            <option value="succulent">Succulent</option>
-            <option value="fern">Fern</option>
-            <option value="flowering">Flowering</option>
-            <option value="herb">Herb</option>
-            <option value="other">Other</option>
+            <option className='text-green-600 font-bold' value="">Select category</option>
+            <option className='text-green-600 font-bold' value="succulent">Succulent</option>
+            <option className='text-green-600 font-bold' value="fern">Fern</option>
+            <option className='text-green-600 font-bold' value="flowering">Flowering</option>
+            <option className='text-green-600 font-bold' value="herb">Herb</option>
+            <option className='text-green-600 font-bold' value="other">Other</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="careLevel" className="block mb-1 font-medium text-green-800">Care Level</label>
+          <label htmlFor="careLevel" className="block mb-1 font-bold text-green-600">Care Level</label>
           <select
             id="careLevel"
             name="careLevel"
@@ -125,15 +125,15 @@ const UpdatePlants = () => {
             className="w-full border px-4 py-2 rounded"
             required
           >
-            <option value="">Select care level</option>
-            <option value="easy">Easy</option>
-            <option value="moderate">Moderate</option>
-            <option value="difficult">Difficult</option>
+            <option className='text-green-600 font-bold' value="">Select care level</option>
+            <option className='text-green-600 font-bold' value="easy">Easy</option>
+            <option className='text-green-600 font-bold' value="moderate">Moderate</option>
+            <option className='text-green-600 font-bold' value="difficult">Difficult</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="healthStatus" className="block mb-1 font-medium text-green-800">Health Status</label>
+          <label htmlFor="healthStatus" className="block mb-1 font-bold text-green-600">Health Status</label>
           <select
             id="healthStatus"
             name="healthStatus"
@@ -141,15 +141,15 @@ const UpdatePlants = () => {
             className="w-full border px-4 py-2 rounded"
             required
           >
-            <option value="">Select health status</option>
-            <option value="healthy">Healthy</option>
-            <option value="needs_attention">Needs Attention</option>
-            <option value="sick">Sick</option>
+            <option className='text-green-600 font-bold' value="">Select health status</option>
+            <option className='text-green-600 font-bold' value="healthy">Healthy</option>
+            <option className='text-green-600 font-bold' value="needs_attention">Needs Attention</option>
+            <option className='text-green-600 font-bold' value="sick">Sick</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="wateringFrequency" className="block mb-1 font-medium text-green-800">Watering Frequency</label>
+          <label htmlFor="wateringFrequency" className="block mb-1 font-bold text-green-600">Watering Frequency</label>
           <input
             id="wateringFrequency"
             type="text"
@@ -160,7 +160,7 @@ const UpdatePlants = () => {
         </div>
 
         <div>
-          <label htmlFor="lastWateredDate" className="block mb-1 font-medium text-green-800">Last Watered Date</label>
+          <label htmlFor="lastWateredDate" className="block mb-1 font-bold text-green-600">Last Watered Date</label>
           <input
             id="lastWateredDate"
             type="date"
@@ -171,7 +171,7 @@ const UpdatePlants = () => {
         </div>
 
         <div>
-          <label htmlFor="nextWateringDate" className="block mb-1 font-medium text-green-800">Next Watering Date</label>
+          <label htmlFor="nextWateringDate" className="block mb-1 font-bold text-green-600">Next Watering Date</label>
           <input
             id="nextWateringDate"
             type="date"

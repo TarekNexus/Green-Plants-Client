@@ -26,10 +26,10 @@ const PlantCareMistakes = () => {
   return (
     <section className="py-16 px-4  text-center relative">
       <div className="w-11/12 mx-auto">
-        <h4 className="text-green-600 font-semibold uppercase tracking-wider mb-2">
+        <h4 className="text-green-600  font-semibold uppercase tracking-wider mb-2">
           🌿 Informative & Clear
         </h4>
-        <h2 className="text-4xl font-bold text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold  mb-12">
           Common Plant Care Mistakes to Avoid
         </h2>
 
@@ -43,7 +43,7 @@ const PlantCareMistakes = () => {
                 ${
                   index === 2
                     ? "bg-green-600 border-green-600 text-white"
-                    : "bg-white border-green-200"
+                    : "bg-white z-10 border-green-200"
                 }
               `}
               style={{ flex: "1 1 0" }}
@@ -53,7 +53,7 @@ const PlantCareMistakes = () => {
                   ${
                     index === 2
                       ? "bg-green-500 border-white"
-                      : "bg-white border-green-300"
+                      : "bg-white z-10 border-green-300"
                   }
                 `}
               >

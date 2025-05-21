@@ -55,18 +55,17 @@ const AddPlant = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start px-4 pt-16 relative">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
+    
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-green-700 mb-2">Add New Plant</h2>
-        <p className="text-green-600 text-sm">Fill out the form to add a new plant</p>
+        <h2 className="text-3xl font-bold text-green-600 mb-2">Add New Plant</h2>
+        <p className=" text-xl">Fill out the form to add a new plant</p>
       </div>
 
-      <div className="w-full max-w-5xl bg-white shadow-lg rounded-xl p-8 space-y-6">
+      <div className="w-full max-w-5xl  shadow-lg rounded-xl p-8 space-y-6">
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleAddPlant}>
           <div className="space-y-4">
             <div>
-              <label className="block text-green-800 font-medium mb-1">User Name</label>
+              <label className="block text-green-600 font-medium mb-1">User Name</label>
               <input
                 type="text"
                 name="userName"
@@ -77,7 +76,7 @@ const AddPlant = () => {
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">User Email</label>
+              <label className="block text-green-600 font-medium mb-1">User Email</label>
               <input
                 type="email"
                 name="userEmail"
@@ -88,7 +87,7 @@ const AddPlant = () => {
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Plant Name</label>
+              <label className="block text-green-600 font-medium mb-1">Plant Name</label>
               <input
                 type="text"
                 name="plantName"
@@ -99,7 +98,7 @@ const AddPlant = () => {
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Plant Image URL</label>
+              <label className="block text-green-600 font-medium mb-1">Plant Image URL</label>
               <input
                 type="text"
                 name="image"
@@ -110,10 +109,11 @@ const AddPlant = () => {
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Description</label>
+              <label className="block text-green-600 font-medium mb-1">Description</label>
               <textarea
                 name="description"
                 rows="4"
+                placeholder="Write a Description here ?"
                 className="w-full border border-green-300 rounded px-4 py-2"
               ></textarea>
             </div>
@@ -121,62 +121,62 @@ const AddPlant = () => {
 
           <div className="space-y-4">
             <div>
-              <label className="block text-green-800 font-medium mb-1">Category</label>
+              <label className="block text-green-600 font-medium mb-1">Category</label>
               <select
                 name="category"
                 required
                 className="w-full border border-green-300 rounded px-4 py-2"
               >
-                <option value="">Select category</option>
-                <option value="succulent">Succulent</option>
-                <option value="fern">Fern</option>
-                <option value="flowering">Flowering</option>
-                <option value="herb">Herb</option>
-                <option value="other">Other</option>
+                <option className="font-semibold text-green-600" value="">Select category</option>
+                <option className="font-semibold text-green-600" value="succulent">Succulent</option>
+                <option className="font-semibold text-green-600" value="fern">Fern</option>
+                <option className="font-semibold text-green-600" value="flowering">Flowering</option>
+                <option className="font-semibold text-green-600" value="herb">Herb</option>
+                <option className="font-semibold text-green-600" value="other">Other</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Care Level</label>
+              <label className="block text-green-600 font-medium mb-1">Care Level</label>
               <select
                 name="careLevel"
                 required
                 className="w-full border border-green-300 rounded px-4 py-2"
               >
-                <option value="">Select care level</option>
-                <option value="easy">Easy</option>
-                <option value="moderate">Moderate</option>
-                <option value="difficult">Difficult</option>
+                <option className="font-semibold text-green-600" value="">Select care level</option>
+                <option className="font-semibold text-green-600" value="easy">Easy</option>
+                <option className="font-semibold text-green-600" value="moderate">Moderate</option>
+                <option className="font-semibold text-green-600" value="difficult">Difficult</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Health Status</label>
+              <label className="block text-green-600 font-medium mb-1">Health Status</label>
               <select
                 name="healthStatus"
                 required
                 className="w-full border border-green-300 rounded px-4 py-2"
               >
-                <option value="">Select health status</option>
-                <option value="healthy">Healthy</option>
-                <option value="needs_attention">Needs Attention</option>
-                <option value="sick">Sick</option>
+                <option className="font-semibold text-green-600" value="">Select health status</option>
+                <option className="font-semibold text-green-600" value="healthy">Healthy</option>
+                <option className="font-semibold text-green-600" value="needs_attention">Needs Attention</option>
+                <option className="font-semibold text-green-600" value="sick">Sick</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Watering Frequency</label>
+              <label className="block text-green-600 font-medium mb-1">Watering Frequency</label>
               <input
                 type="text"
                 name="wateringFrequency"
                 placeholder="e.g., Every 3 days"
                 required
-                className="w-full border border-green-300 rounded px-4 py-2"
+                className="w-full border  border-green-300 rounded px-4 py-2"
               />
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Last Watered Date</label>
+              <label className="block text-green-600 font-medium mb-1">Last Watered Date</label>
               <input
                 type="date"
                 name="lastWateredDate"
@@ -185,7 +185,7 @@ const AddPlant = () => {
             </div>
 
             <div>
-              <label className="block text-green-800 font-medium mb-1">Next Watering Date</label>
+              <label className="block text-green-600 font-medium mb-1">Next Watering Date</label>
               <input
                 type="date"
                 name="nextWateringDate"

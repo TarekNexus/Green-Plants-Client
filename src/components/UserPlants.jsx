@@ -27,7 +27,7 @@ const UserPlants = () => {
         <h2 className="text-4xl font-bold mb-6 leading-tight">
             Easy-Care <br /> Plants for Beginners
         </h2>
-        <p className="text-gray-700 mb-6">
+        <p className=" mb-6">
           Discover a curated selection of low-maintenance houseplants perfect for beginners. These green companions are easy to care for, thrive in various environments, and bring life into any room — no green thumb required!
         </p>
         <div className="flex items-center gap-6">
@@ -38,8 +38,8 @@ const UserPlants = () => {
             Explore Plants
           </a>
           <div>
-            <p className="text-sm text-gray-500">Need Help?</p>
-            <p className="text-lg font-bold text-gray-900">(123) 456-7890</p>
+            <p className="text-sm ">Need Help?</p>
+            <p className="text-lg font-bold ">(123) 456-7890</p>
           </div>
         </div>
       </div>

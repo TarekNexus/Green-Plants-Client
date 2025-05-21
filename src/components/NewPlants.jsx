@@ -13,7 +13,7 @@ const NewPlants = ({lastPlantData}) => {
           <LeafIcon className="w-5 h-5" /> New Arrivals
         </p>
         <h2 className="text-4xl font-bold">Discover Our New Plants</h2>
-        <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+        <p className=" mt-2 max-w-xl mx-auto">
           Explore the latest additions to our green collection. Handpicked for ease and beauty.
         </p>
       </div>
@@ -22,7 +22,7 @@ const NewPlants = ({lastPlantData}) => {
         {lastPlantData.map((plant) => (
           <div
             key={plant._id}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+            className=" rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
           >
             <img
               src={plant.image}
@@ -31,7 +31,7 @@ const NewPlants = ({lastPlantData}) => {
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">{plant.plantName}</h3>
-              <p className="text-gray-600 mb-4">{plant.description}</p>
+              <p className=" mb-4">{plant.description}</p>
              
                <button
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"

@@ -29,6 +29,24 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, provider);
     }
 
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+ 
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }, [isDarkTheme]);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(prev => !prev);
+  };
+
+
+
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -47,7 +65,11 @@ const AuthProvider = ({children}) => {
         createUser,
         logOut,
         signIn,
-        signInWithGoogle,loading,setLoding
+        signInWithGoogle,
+        loading,
+        setLoding ,
+        isDarkTheme,
+    toggleTheme,
 
     }
     return <AuthContext value={authdata}>

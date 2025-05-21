@@ -4,10 +4,10 @@ import logo from "../assets/f-logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
-
+import { Tooltip } from "react-tooltip";
 const Navber = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
-
+  const { user, logOut, loading,isDarkTheme, toggleTheme  } = useContext(AuthContext);
+  
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -17,6 +17,8 @@ const Navber = () => {
         toast.error(error.message);
       });
   };
+
+ 
 
   return (
     <nav className="sticky top-0 z-20">
@@ -44,24 +46,54 @@ const Navber = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/all-plants" className={({ isActive }) => isActive ? "active" : ""}>All Plants</NavLink>
+                <NavLink
+                  to="/all-plants"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  All Plants
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/Add-Plant" className={({ isActive }) => isActive ? "active" : ""}>Add Plant</NavLink>
+                <NavLink
+                  to="/Add-Plant"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Add Plant
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/my-plants" className={({ isActive }) => isActive ? "active" : ""}>My Plants</NavLink>
+                <NavLink
+                  to="/my-plants"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  My Plants
+                </NavLink>
               </li>
               {!user && (
                 <>
                   <li>
-                    <NavLink to="/auth/login" className={({ isActive }) => isActive ? "active" : ""}>Login</NavLink>
+                    <NavLink
+                      to="/auth/login"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      Login
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/auth/register" className={({ isActive }) => isActive ? "active" : ""}>Register</NavLink>
+                    <NavLink
+                      to="/auth/register"
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
+                      Register
+                    </NavLink>
                   </li>
                 </>
               )}
@@ -77,20 +109,39 @@ const Navber = () => {
           </Link>
         </div>
 
-        {/* Rest of the navbar code remains exactly the same */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-2">
             <li>
-              <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/all-plants" className={({ isActive }) => isActive ? "active" : ""}>All Plants</NavLink>
+              <NavLink
+                to="/all-plants"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                All Plants
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/Add-Plant" className={({ isActive }) => isActive ? "active" : ""}>Add Plant</NavLink>
+              <NavLink
+                to="/Add-Plant"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Add Plant
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/my-plants" className={({ isActive }) => isActive ? "active" : ""}>My Plants</NavLink>
+              <NavLink
+                to="/my-plants"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                My Plants
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -104,11 +155,18 @@ const Navber = () => {
             <>
               <div className="mr-2 sm:mr-6 flex items-center gap-2 sm:gap-3">
                 <img
-                  src={user.photoURL}
-                  alt={user.displayName}
+                   referrerPolicy="no-referrer"
+                  data-tooltip-id="user-tooltip"
+                  data-tooltip-content={user?.displayName || "User"}
+                  data-tooltip-place="top"
+                  src={
+                    user?.photoURL ||""
+                    
+                  }
+                  alt={user?.displayName || "User"}
                   className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-gray-300"
-                  title={user.displayName}
                 />
+                <Tooltip id="user-tooltip" />
               </div>
               <button
                 onClick={handleLogOut}
@@ -133,10 +191,16 @@ const Navber = () => {
               </Link>
             </>
           )}
+           <input
+      type="checkbox"
+      className="ml-4 toggle theme-controller"
+      checked={isDarkTheme}
+      onChange={toggleTheme}
+    />
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navber; 
+export default Navber;
