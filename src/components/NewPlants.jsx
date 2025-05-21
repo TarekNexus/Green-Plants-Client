@@ -21,7 +21,7 @@ const NewPlants = ({lastPlantData}) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {lastPlantData.map((plant) => (
           <div
-            key={plant.id}
+            key={plant._id}
             className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
           >
             <img
