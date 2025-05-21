@@ -26,11 +26,11 @@ const NewPlants = ({lastPlantData}) => {
           >
             <img
               src={plant.image}
-              alt={plant.name}
+              alt={plant.plantName}
               className="w-full h-56 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{plant.name}</h3>
+              <h3 className="text-xl font-semibold mb-2">{plant.plantName}</h3>
               <p className="text-gray-600 mb-4">{plant.description}</p>
              
                <button

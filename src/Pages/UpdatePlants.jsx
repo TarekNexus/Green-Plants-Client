@@ -9,7 +9,9 @@ const UpdatePlants = () => {
   const { id } = useParams();
   const [plant, setPlant] = useState(null);
   const [loading, setLoading] = useState(true);
-
+ useEffect(() => {
+    document.title = "Update Plant | Green Plants";
+  }, []);
   useEffect(() => {
     fetch(`http://localhost:3000/plants/${id}`)
       .then(res => res.json())

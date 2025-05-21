@@ -1,9 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import Loading from "../components/Loading"; // Make sure this exists or remove if not needed
 
 const AddPlant = () => {
+   useEffect(() => {
+    document.title = "Add Plant| Green Plants";
+  }, []);
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 

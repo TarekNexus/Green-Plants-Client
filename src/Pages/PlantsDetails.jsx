@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ScrollRestoration, useLoaderData } from "react-router-dom";
 
 const PlantsDetails = () => {
   const plant = useLoaderData();
-
+ useEffect(() => {
+    document.title = "Plant Details | Green Plants";
+  }, []);
   return (
     <div className="w-11/12 mx-auto p-6">
       <ScrollRestoration></ScrollRestoration>

@@ -9,7 +9,9 @@ const AllPlants = () => {
   const [sortBy, setSortBy] = useState('');
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+ useEffect(() => {
+    document.title = "All plants | Green Plants";
+  }, []);
   useEffect(() => {
     fetch('http://localhost:3000/plants')
       .then(res => res.json())

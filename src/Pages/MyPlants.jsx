@@ -10,7 +10,9 @@ const MyPlants = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { user } = useContext(AuthContext);
-
+  useEffect(() => {
+    document.title = "My Plant | Green Plants";
+  }, []);
   useEffect(() => {
     if (!user?.email) return;
 
