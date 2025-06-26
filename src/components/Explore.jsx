@@ -6,21 +6,20 @@ import c4 from "../assets/c4.jpg";
 import c5 from "../assets/c5.avif";
 import c6 from "../assets/c6.avif";
 import c7 from "../assets/c7.jpeg";
-import { Users } from 'lucide-react';
+import { Users } from "lucide-react";
 
 const Explore = () => {
   return (
     <section className="w-11/12 mx-auto px-6 py-16 bg-white text-center">
-       <div className="mb-8">
-         <p className="text-green-600  justify-center font-semibold flex items-center gap-2 mb-2">
-           <Users className="w-5 h-5" /> Join With Us
+      <div className="mb-8">
+        <p className="text-green-600 justify-center font-semibold flex items-center gap-2 mb-2">
+          <Users className="w-5 h-5" /> Join With Us
         </p>
-        <h3 className="text-4xl font-bold   uppercase mb-2">
-          Our Community
-        </h3>
+        <h3 className="text-4xl font-bold uppercase mb-2">Our Community</h3>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Join thousands of plant lovers who share tips, styles, and stories about their green spaces.  
-          Be inspired and connect with nature lovers like you!
+          Join thousands of plant lovers who share tips, styles, and stories
+          about their green spaces. Be inspired and connect with nature lovers
+          like you!
         </p>
       </div>
 
@@ -30,42 +29,20 @@ const Explore = () => {
           <img
             src={c1}
             alt="Gallery 1"
-            className="w-full h-full object-cover rounded"
+            className="w-full h-full object-cover rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
           />
         </div>
 
         {/* The rest of the images */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 md:col-span-3 gap-4">
-          <img
-            src={c2}
-            alt="Gallery 2"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
-          <img
-            src={c6}
-            alt="Gallery 3"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
-          <img
-            src={c4}
-            alt="Gallery 4"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
-          <img
-            src={c5}
-            alt="Gallery 5"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
-          <img
-            src={c3}
-            alt="Gallery 6"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
-          <img
-            src={c7}
-            alt="Gallery 7"
-            className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded"
-          />
+          {[c2, c6, c4, c5, c3, c7].map((imgSrc, idx) => (
+            <img
+              key={idx}
+              src={imgSrc}
+              alt={`Gallery ${idx + 2}`}
+              className="w-full h-40 sm:h-48 md:h-40 lg:h-48 object-cover rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
+            />
+          ))}
         </div>
       </div>
     </section>

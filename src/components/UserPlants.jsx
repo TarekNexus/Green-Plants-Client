@@ -1,8 +1,10 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
 import image from '../assets/be-f.webp'; // Replace with relevant image
+import { Link } from 'react-router';
 
 const UserPlants = () => {
+    
   return (
     <section className="w-11/12 mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
       {/* Image Section */}
@@ -31,12 +33,12 @@ const UserPlants = () => {
           Discover a curated selection of low-maintenance houseplants perfect for beginners. These green companions are easy to care for, thrive in various environments, and bring life into any room — no green thumb required!
         </p>
         <div className="flex items-center gap-6">
-          <a
-            href="#"
+          <Link
+            to='/all-plants'
             className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition"
           >
             Explore Plants
-          </a>
+          </Link>
           <div>
             <p className="text-sm ">Need Help?</p>
             <p className="text-lg font-bold ">(123) 456-7890</p>

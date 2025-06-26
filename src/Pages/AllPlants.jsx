@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
+import { ScrollRestoration } from 'react-router';
 
 
 
@@ -41,7 +42,7 @@ const AllPlants = () => {
 
   return (
     <div className="p-6 w-11/12 mx-auto relative">
-      
+      <ScrollRestoration></ScrollRestoration>
       {/* Sort Dropdown */}
       <div className="mb-4 text-right">
         <label className="mr-2 font-medium text-green-700">Sort by:</label>
