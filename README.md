@@ -1,9 +1,9 @@
 # 🌿 Green Plants — Plant Care Tracker
 
 ## 🌐 Live Site
-[🔗 Visit Green Plants](https://a10-green-plants.netlify.app/)
-[🔗 GitHub Backend](https://github.com/TarekNexus/green-plants-server)
 
+[🔗 Visit Green Plants](https://a10-green-plants.netlify.app/)
+[🔗 GitHub Backend](https://github.com/TarekNexus/Green-Plants-servers)
 
 ---
 
@@ -18,56 +18,78 @@ Users can easily register or log in, add their plants, and stay on top of care r
 ## 🚀 Features
 
 - 🔐 **Secure Authentication**
+
   - Email/Password and Google login
   - Conditional navigation and protected routes
 
 - 🌱 **Plant Management System**
+
   - Add, view, update, and delete plants
   - Track watering frequency, health status, and care level
 
 - 🗂️ **Categorized & Sorted Views**
+
   - Filter and sort by care level or next watering date
   - “My Plants” view shows only the user's added plants
 
 - 🌗 **Dark/Light Theme Toggle**
+
   - User-friendly theme switcher for better accessibility
 
 - 📅 **Reminders & Care Logging**
   - Date inputs for watering and health tracking
   - Styled success/error messages (No browser alerts)
+- 📊 **Dashboard with Overview and Stats**
+- Default dashboard page showing summary stats cards like Total Plants and My Plants
+- Manage plants through dashboard routes: All Plants, Add Plant, My Plants
+- Clean tables and forms displaying relevant data per section
 
 ---
 
 ## 🖼️ Pages & Components
 
 - **Home Page**
+
   - Slider/Banner with plant care tips
   - Sections: New Plants, Beginner-Friendly Tips, Common Mistakes
 
 - **Add Plant (Private Route)**
+
   - Dropdowns for category & care level
   - Date pickers and real-time feedback
 
 - **All Plants**
+
   - Table view with sorting and details button
 
 - **View Details (Private Route)**
+
   - Detailed plant info in card-style layout
 
 - **My Plants (Private Route)**
+
   - Update/Delete with confirmation modal
 
 - **Register/Login**
+
   - Validations and success/error handling via toast alerts
 
 - **404 Page**
   - Custom error page with navigation help
 
+- **Dashboard (Private Route)**
+
+- Overview with stats cards
+
+- Navigation routes for plant management
+
+- Data presentation in tables/forms
 ---
 
 ## 🛠️ Tech Stack
 
 ### 🔧 Frontend
+
 - React + Vite
 - React Router DOM
 - Tailwind CSS
@@ -77,14 +99,15 @@ Users can easily register or log in, add their plants, and stay on top of care r
 - React Toastify (success/error messages)
 - React Tooltip
 
-
 ### 🔧 Backend
+
 - Node.js
 - Express.js
-- MongoDB 
-- CORS, dotenv, 
+- MongoDB
+- CORS, dotenv,
 
 ---
+
 💪 Getting Started (Run Locally)
 
 ✅ Prerequisites
@@ -105,9 +128,7 @@ npm install
 
 Create a .env file in the root folder and add: VITE_API_URL=your_api_url VITE_FIREBASE_API_KEY=your_firebase_api_key VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain VITE_FIREBASE_PROJECT_ID=your_project_id VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id VITE_FIREBASE_APP_ID=your_app_id
 
-
-
-## 📦 Dependencies Used  
+## 📦 Dependencies Used
 
 **Frontend Dependencies:**
 
@@ -128,4 +149,4 @@ Create a .env file in the root folder and add: VITE_API_URL=your_api_url VITE_FI
   "swiper": "^11.2.6",
   "tailwindcss": "^4.1.7"
 }
-
+```

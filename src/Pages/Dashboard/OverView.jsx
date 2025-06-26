@@ -10,13 +10,13 @@ const Overview = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/count")
+      .get("https://green-plants-server.vercel.app/count")
       .then((res) => setTotalPlants(res.data.count))
       .catch((err) => console.error(err));
 
     if (user?.email) {
       axios
-        .get(`http://localhost:3000/my-items/count?email=${user.email}`)
+        .get(`https://green-plants-server.vercel.app/my-items/count?email=${user.email}`)
         .then((res) => setMyPlants(res.data.count))
         .catch((err) => console.error(err));
     }

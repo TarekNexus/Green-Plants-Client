@@ -22,7 +22,7 @@ const AddPlant = () => {
       addedDate: new Date().toISOString().split("T")[0], // Automatically adds today's date
     };
 
-    fetch("http://localhost:3000/plants", {
+    fetch("https://green-plants-server.vercel.app/plants", {
       method: "POST",
       headers: {
         "content-type": "application/json",

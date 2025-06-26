@@ -13,7 +13,7 @@ const UpdatePlants = () => {
     document.title = "Update Plant | Green Plants";
   }, []);
   useEffect(() => {
-    fetch(`http://localhost:3000/plants/${id}`)
+    fetch(`https://green-plants-server.vercel.app/plants/${id}`)
       .then(res => res.json())
       .then(data => {
         setPlant(data);
@@ -28,7 +28,7 @@ const UpdatePlants = () => {
     const formData = new FormData(form);
     const updatedPlant = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/plants/${id}`, {
+    fetch(`https://green-plants-server.vercel.app/plants/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedPlant)

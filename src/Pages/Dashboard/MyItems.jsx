@@ -17,7 +17,7 @@ const MyPlants = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/plants/email/${user.email}`)
+    fetch(`https://green-plants-server.vercel.app/plants/email/${user.email}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch your plants");
         return res.json();
@@ -43,7 +43,7 @@ const MyPlants = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/plants/${id}`, {
+        fetch(`https://green-plants-server.vercel.app/plants/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
