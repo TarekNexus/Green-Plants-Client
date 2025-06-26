@@ -2,6 +2,8 @@
 
 ## 🌐 Live Site
 [🔗 Visit Green Plants](https://a10-green-plants.netlify.app/)
+[🔗 GitHub Backend](https://github.com/TarekNexus/green-plants-server)
+
 
 ---
 
@@ -83,8 +85,47 @@ Users can easily register or log in, add their plants, and stay on top of care r
 - CORS, dotenv, 
 
 ---
+💪 Getting Started (Run Locally)
 
-## 🔐 Environment Variables
+✅ Prerequisites
 
-Ensure you add a `.env` file with the following (do not expose in public repo):
+Node.js v18+
+
+Git
+
+📅 Clone the repository
+
+git clone https://github.com/TarekNexus/green-plants cd green-plants
+
+📦 Install dependencies
+
+npm install
+
+⚙️ Setup environment variables
+
+Create a .env file in the root folder and add: VITE_API_URL=your_api_url VITE_FIREBASE_API_KEY=your_firebase_api_key VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain VITE_FIREBASE_PROJECT_ID=your_project_id VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id VITE_FIREBASE_APP_ID=your_app_id
+
+
+
+## 📦 Dependencies Used  
+
+**Frontend Dependencies:**
+
+```json
+{
+  "@tailwindcss/vite": "^4.1.7",
+  "firebase": "^11.7.3",
+  "lottie-react": "^2.4.1",
+  "lucide-react": "^0.511.0",
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
+  "react-icons": "^5.5.0",
+  "react-router": "^7.6.0",
+  "react-router-dom": "^7.6.0",
+  "react-toastify": "^11.0.5",
+  "react-tooltip": "^5.28.1",
+  "sweetalert2": "^11.21.2",
+  "swiper": "^11.2.6",
+  "tailwindcss": "^4.1.7"
+}
 
