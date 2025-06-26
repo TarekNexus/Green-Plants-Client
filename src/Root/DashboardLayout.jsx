@@ -68,7 +68,7 @@ const DashboardLayout = () => {
               to="/dashboard/allItems"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              All Items
+              🪴 All Plants
             </NavLink>
           </li>
           <li>
@@ -76,7 +76,7 @@ const DashboardLayout = () => {
               to="/dashboard/addItems"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Add item
+              🌱 Add Plants
             </NavLink>
           </li>
           <li>
@@ -84,7 +84,7 @@ const DashboardLayout = () => {
               to="/dashboard/MyItem"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              My Item
+              🍀 My Plants
             </NavLink>
           </li>
         </ul>

@@ -22,12 +22,20 @@ const Overview = () => {
     }
   }, [user]);
 
+
+
+
+ useEffect(() => {
+    document.title = "Overview | Green Plants";
+  }, []);
+
+
+
   return (
     <div className="mt-10 w-11/12 mx-auto">
       <h1 className="text-3xl text-center font-bold mb-10">
         📊 Dashboard Overview
       </h1>
-
       {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
         {/* Total Plants */}
@@ -77,20 +85,20 @@ const Overview = () => {
           <Tooltip id="user-tooltip" />
         </div>
         <div className="md:w-2/3 text-center md:text-left">
-          <h2 className="text-2xl font-bold text-gray-800 mb-1">
+          <h2 className="text-2xl font-bold  mb-1">
             {user?.displayName || "N/A"}
           </h2>
-          <p className="text-sm text-gray-500 mb-3">🌿 Plant Lover</p>
+          <p className="text-sm  mb-3">🌿 Plant Lover</p>
           <p className="text-base mb-2">
             <span className="font-semibold">📧 Email:</span> {user?.email}
           </p>
           <div className="mt-4 flex justify-center md:justify-start gap-10">
             <div>
-              <p className="text-lg font-bold text-gray-800">20,160</p>
+              <p className="text-lg font-bold ">20,160</p>
               <p className="text-sm text-gray-500">Followers</p>
             </div>
             <div>
-              <p className="text-lg font-bold text-gray-800">478,888</p>
+              <p className="text-lg font-bold ">478,888</p>
               <p className="text-sm text-gray-500">Following</p>
             </div>
           </div>

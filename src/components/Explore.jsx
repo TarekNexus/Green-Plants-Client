@@ -10,13 +10,13 @@ import { Users } from "lucide-react";
 
 const Explore = () => {
   return (
-    <section className="w-11/12 mx-auto px-6 py-16 bg-white text-center">
+    <section className="w-11/12 mx-auto px-6 py-16  text-center">
       <div className="mb-8">
         <p className="text-green-600 justify-center font-semibold flex items-center gap-2 mb-2">
           <Users className="w-5 h-5" /> Join With Us
         </p>
         <h3 className="text-4xl font-bold uppercase mb-2">Our Community</h3>
-        <p className="text-gray-600 max-w-xl mx-auto">
+        <p className=" max-w-xl mx-auto">
           Join thousands of plant lovers who share tips, styles, and stories
           about their green spaces. Be inspired and connect with nature lovers
           like you!
