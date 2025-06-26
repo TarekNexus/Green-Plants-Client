@@ -12,6 +12,11 @@ import AddPlant from "../Pages/AddPlant";
 import Privetroute from "../Provider/PrivetRoute";
 import PlantsDetails from "../Pages/PlantsDetails";
 import UpdatePlants from "../Pages/UpdatePlants";
+import AllItems from "../Pages/Dashboard/AllItems";
+import AddItems from "../Pages/Dashboard/AddItems";
+import MyItems from "../Pages/Dashboard/MyItems";
+import DashboardLayout from "../Root/DashboardLayout";
+import OverView from "../Pages/Dashboard/OverView";
 
 
 
@@ -32,14 +37,14 @@ export const router = createBrowserRouter([
       {
         path:"/",
         Component:Home,
-         loader:()=>fetch("https://green-plants-server.vercel.app/plants/latest"),
+         loader:()=>fetch("http://localhost:3000/plants/latest"),
         hydrateFallbackElement:<Loading></Loading>,
         
       },
       {
         path:"/all-plants",
         element:<AllPlants></AllPlants>,
-        loader:()=>fetch("https://green-plants-server.vercel.app/plants"),
+        loader:()=>fetch("http://localhost:3000/plants"),
          hydrateFallbackElement:<Loading></Loading>
 
       },
@@ -48,7 +53,7 @@ export const router = createBrowserRouter([
         element:<Privetroute>
           <PlantsDetails></PlantsDetails>
         </Privetroute>,
-        loader:({params})=>fetch(`https://green-plants-server.vercel.app/plants/${params.id}`),
+        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`),
          hydrateFallbackElement:<Loading></Loading>
 
       },
@@ -57,7 +62,7 @@ export const router = createBrowserRouter([
         element:<Privetroute>
           <UpdatePlants></UpdatePlants>
         </Privetroute>,
-        loader:({params})=>fetch(`https://green-plants-server.vercel.app/plants/${params.id}`),
+        loader:({params})=>fetch(`http://localhost:3000/plants/${params.id}`),
          hydrateFallbackElement:<Loading></Loading>
 
       },
@@ -89,5 +94,32 @@ export const router = createBrowserRouter([
       }
 
     ]
+  },
+  {
+    path: "/dashboard",
+    element: (
+     
+        <Privetroute>
+          <DashboardLayout></DashboardLayout>
+        </Privetroute>
+      
+    ),
+    children: [
+       { index: true, Component: OverView },
+      {
+        path:'allItems',
+        Component:AllItems
+      },
+      {
+        path:"addItems",
+        Component:AddItems
+
+      },
+        {
+        path:"MyItem",
+        Component:MyItems
+
+      }
+    ],
   },
 ]);

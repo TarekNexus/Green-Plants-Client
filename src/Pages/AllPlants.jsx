@@ -13,7 +13,7 @@ const AllPlants = () => {
     document.title = "All plants | Green Plants";
   }, []);
   useEffect(() => {
-    fetch('https://green-plants-server.vercel.app/plants')
+    fetch('http://localhost:3000/plants')
       .then(res => res.json())
       .then(data => {
         setPlantData(data);

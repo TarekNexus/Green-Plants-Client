@@ -6,8 +6,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
 const Navber = () => {
-  const { user, logOut, loading,isDarkTheme, toggleTheme  } = useContext(AuthContext);
-  
+  const { user, logOut, loading, isDarkTheme, toggleTheme } =
+    useContext(AuthContext);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -17,8 +18,6 @@ const Navber = () => {
         toast.error(error.message);
       });
   };
-
- 
 
   return (
     <nav className="sticky top-0 z-20">
@@ -61,22 +60,37 @@ const Navber = () => {
                   All Plants
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/Add-Plant"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Add Plant
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/my-plants"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  My Plants
-                </NavLink>
-              </li>
+              {user && (
+                <li>
+                  <NavLink
+                    to="/Add-Plant"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Add Plant
+                  </NavLink>
+                </li>
+              )}
+              {user && (
+                <li>
+                  <NavLink
+                    to="/my-plants"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    My Plants
+                  </NavLink>
+                </li>
+              )}
+
+              {user && (
+                <li>
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
+              )}
               {!user && (
                 <>
                   <li>
@@ -127,22 +141,36 @@ const Navber = () => {
                 All Plants
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/Add-Plant"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                Add Plant
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/my-plants"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                My Plants
-              </NavLink>
-            </li>
+            {user && (
+              <li>
+                <NavLink
+                  to="/Add-Plant"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Add Plant
+                </NavLink>
+              </li>
+            )}
+            {user && (
+              <li>
+                <NavLink
+                  to="/my-plants"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  My Plants
+                </NavLink>
+              </li>
+            )}
+            {user && (
+              <li>
+                <NavLink
+                  to="/dashboard"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
 
@@ -155,14 +183,11 @@ const Navber = () => {
             <>
               <div className="mr-2 sm:mr-6 flex items-center gap-2 sm:gap-3">
                 <img
-                   referrerPolicy="no-referrer"
+                  referrerPolicy="no-referrer"
                   data-tooltip-id="user-tooltip"
                   data-tooltip-content={user?.displayName || "User"}
                   data-tooltip-place="top"
-                  src={
-                    user?.photoURL ||""
-                    
-                  }
+                  src={user?.photoURL || ""}
                   alt={user?.displayName || "User"}
                   className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-gray-300"
                 />
@@ -191,12 +216,12 @@ const Navber = () => {
               </Link>
             </>
           )}
-           <input
-      type="checkbox"
-      className="ml-4 toggle theme-controller"
-      checked={isDarkTheme}
-      onChange={toggleTheme}
-    />
+          <input
+            type="checkbox"
+            className="ml-4 toggle theme-controller"
+            checked={isDarkTheme}
+            onChange={toggleTheme}
+          />
         </div>
       </div>
     </nav>
