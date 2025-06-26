@@ -18,33 +18,33 @@ const NewPlants = ({lastPlantData}) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
         {lastPlantData.map((plant) => (
-          <div
-            key={plant._id}
-            className=" rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
-          >
-            <img
-              src={plant.image}
-              alt={plant.plantName}
-              className="w-full h-56 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{plant.plantName}</h3>
-              <p className=" mb-4">{plant.description}</p>
-             
-               <button
-                    className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-                    onClick={(e) => {
-                      e.stopPropagation(); // prevent row click
-                      navigate(`/plants/${plant._id}`);
-                    }}
-                  >
-                    View Details
-                  </button>
-            </div>
-          </div>
-        ))}
+  <div
+    key={plant._id}
+    className="rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+  >
+    <img
+      src={plant.image}
+      alt={plant.plantName}
+      className="w-full h-56 object-cover transform transition-transform duration-300 hover:scale-105"
+    />
+    <div className="p-6">
+      <h3 className="text-xl font-semibold mb-2">{plant.plantName}</h3>
+      <p className="mb-4">{plant.description}</p>
+
+      <button
+        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate(`/plants/${plant._id}`);
+        }}
+      >
+        View Details
+      </button>
+    </div>
+  </div>
+))}
       </div>
     </section>
   );
