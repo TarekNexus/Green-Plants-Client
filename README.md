@@ -118,7 +118,8 @@ Git
 
 📅 Clone the repository
 
-git clone https://github.com/TarekNexus/green-plants cd green-plants
+git clone https://github.com/TarekNexus/Green-Plants-Client cd Green-Plants-Client
+git clone https://github.com/TarekNexus/Green-Plants-servers cd Green-Plants-servers
 
 📦 Install dependencies
 
